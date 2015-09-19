@@ -10,7 +10,7 @@
     "url": "https://github.com/craigcoles/true-sweepstake"
   },
   "scripts": {
-    "start": "set DEBUG=dem-movies & node ./bin/www"
+    "start": "set DEBUG=true-sweepstake & node ./bin/www"
   },
   "engines": {
     "node": "0.10.x"
@@ -23,7 +23,7 @@
     "morgan": "~1.5.1",
     "serve-favicon": "~2.2.0",
     "ejs": "^1.0.0",
-    "moviedb": "^0.1.9",
-    "node-sass-middleware": "^0.5.0"
+    "node-sass-middleware": "^0.5.0",
+    "dateformat": "^1.0.11"
   }
 }
