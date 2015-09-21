@@ -1,102 +1,62 @@
 {
-    "46" : [
-        {
-            "name" : "Jon Boon"
-        }
-    ],
-    "34" : [
-        {
-            "name" : "Jack Thompson"
-        }
-    ],
-    "47" : [
-        {
-            "name" : "Danny Donovan"
-        }
-    ],
-    "720" : [
-        {
-            "name" : "Kev Rowe"
-        }
-    ],
-    "36" : [
-        {
-            "name" : "Ryan Anthoney"
-        }
-    ],
-    "50" : [
-        {
-            "name" : "Tom King"
-        }
-    ],
-    "39" : [
-        {
-            "name" : "Rich McCloskey"
-        }
-    ],
-    "49" : [
-        {
-            "name" : "Nick Ballie"
-        }
-    ],
-    "42" : [
-        {
-            "name" : "Tom Johnson"
-        }
-    ],
-    "41" : [
-        {
-            "name" : "Denise"
-        }
-    ],
-    "45" : [
-        {
-            "name" : "Matt Sutherland"
-        }
-    ],
-    "51" : [
-        {
-            "name" : "Dave Jones"
-        }
-    ],
-    "33" : [
-        {
-            "name" : "Becky Elms"
-        }
-    ],
-    "68" : [
-        {
-            "name" : "Hugh Evans"
-        }
-    ],
-    "37" : [
-        {
-            "name" : "Craig Coles"
-        }
-    ],
-    "40" : [
-        {
-            "name" : "Rich Foggin"
-        }
-    ],
-    "35" : [
-        {
-            "name" : "Dave Ayres"
-        }
-    ],
-    "38" : [
-        {
-            "name" : "Danny Donovan"
-        }
-    ],
-    "52" : [
-        {
-            "name" : "Becky Elms"
-        }
-    ],
-    "58" : [
-        {
-            "name" : "Ash Woodman"
-        }
-    ]
+    "46" : {
+        "name" : "Jon Boon"
+    },
+    "34" : {
+        "name" : "Jack Thompson"
+    },
+    "47" : {
+        "name" : "Danny Donovan"
+    },
+    "720" : {
+        "name" : "Kev Rowe"
+    },
+    "36" : {
+        "name" : "Ryan Anthoney"
+    },
+    "50" : {
+        "name" : "Tom King"
+    },
+    "39" : {
+        "name" : "Rich McCloskey"
+    },
+    "49" : {
+        "name" : "Nick Ballie"
+    },
+    "42" : {
+        "name" : "Tom Johnson"
+    },
+    "41" : {
+        "name" : "Denise"
+    },
+    "45" : {
+        "name" : "Matt Sutherland"
+    },
+    "51" : {
+        "name" : "Dave Jones"
+    },
+    "33" : {
+        "name" : "Becky Elms"
+    },
+    "68" : {
+        "name" : "Hugh Evans"
+    },
+    "37" : {
+        "name" : "Craig Coles"
+    },
+    "40" : {
+        "name" : "Rich Foggin"
+    },
+    "35" : {
+        "name" : "Dave Ayres"
+    },
+    "38" : {
+        "name" : "Danny Donovan"
+    },
+    "52" : {
+        "name" : "Becky Elms"
+    },
+    "58" : {
+        "name" : "Ash Woodman"
+    }
 }

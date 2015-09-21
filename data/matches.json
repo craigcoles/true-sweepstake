@@ -75,7 +75,7 @@
                 "gmtOffset":1.0,
                 "label":"Sat 19 Sep 2015, 12:00 GMT+01:00"
             },
-            "attendance":0,
+            "attendance":14200,
             "teams":[
                 {
                     "id":47,
@@ -91,13 +91,13 @@
                 }
             ],
             "scores":[
-                0,
-                0
+                10,
+                17
             ],
             "kc":null,
-            "status":"L1",
+            "status":"C",
             "clock":null,
-            "outcome":null,
+            "outcome":"B",
             "events":null
         },
         {
@@ -116,7 +116,7 @@
                 "gmtOffset":1.0,
                 "label":"Sat 19 Sep 2015, 14:30 GMT+01:00"
             },
-            "attendance":0,
+            "attendance":68523,
             "teams":[
                 {
                     "id":36,
@@ -132,13 +132,13 @@
                 }
             ],
             "scores":[
-                0,
-                0
+                50,
+                7
             ],
             "kc":null,
-            "status":"U",
+            "status":"C",
             "clock":null,
-            "outcome":null,
+            "outcome":"A",
             "events":null
         },
         {
@@ -157,7 +157,7 @@
                 "gmtOffset":1.0,
                 "label":"Sat 19 Sep 2015, 16:45 GMT+01:00"
             },
-            "attendance":0,
+            "attendance":29290,
             "teams":[
                 {
                     "id":39,
@@ -173,13 +173,13 @@
                 }
             ],
             "scores":[
-                0,
-                0
+                32,
+                34
             ],
             "kc":null,
-            "status":"U",
+            "status":"C",
             "clock":null,
-            "outcome":null,
+            "outcome":"B",
             "events":null
         },
         {
@@ -198,7 +198,7 @@
                 "gmtOffset":1.0,
                 "label":"Sat 19 Sep 2015, 20:00 GMT+01:00"
             },
-            "attendance":0,
+            "attendance":76232,
             "teams":[
                 {
                     "id":42,
@@ -214,13 +214,13 @@
                 }
             ],
             "scores":[
-                0,
-                0
+                32,
+                10
             ],
             "kc":null,
-            "status":"U",
+            "status":"C",
             "clock":null,
-            "outcome":null,
+            "outcome":"A",
             "events":null
         },
         {
@@ -239,7 +239,7 @@
                 "gmtOffset":1.0,
                 "label":"Sun 20 Sep 2015, 12:00 GMT+01:00"
             },
-            "attendance":0,
+            "attendance":29178,
             "teams":[
                 {
                     "id":45,
@@ -255,13 +255,13 @@
                 }
             ],
             "scores":[
-                0,
-                0
+                25,
+                16
             ],
             "kc":null,
-            "status":"U",
+            "status":"C",
             "clock":null,
-            "outcome":null,
+            "outcome":"A",
             "events":null
         },
         {
@@ -280,7 +280,7 @@
                 "gmtOffset":1.0,
                 "label":"Sun 20 Sep 2015, 14:30 GMT+01:00"
             },
-            "attendance":0,
+            "attendance":71887,
             "teams":[
                 {
                     "id":33,
@@ -296,13 +296,13 @@
                 }
             ],
             "scores":[
-                0,
-                0
+                54,
+                9
             ],
             "kc":null,
-            "status":"U",
+            "status":"C",
             "clock":null,
-            "outcome":null,
+            "outcome":"A",
             "events":null
         },
         {
@@ -321,7 +321,7 @@
                 "gmtOffset":1.0,
                 "label":"Sun 20 Sep 2015, 16:45 GMT+01:00"
             },
-            "attendance":0,
+            "attendance":89019,
             "teams":[
                 {
                     "id":37,
@@ -337,13 +337,13 @@
                 }
             ],
             "scores":[
-                0,
-                0
+                26,
+                16
             ],
             "kc":null,
-            "status":"U",
+            "status":"C",
             "clock":null,
-            "outcome":null,
+            "outcome":"A",
             "events":null
         },
         {

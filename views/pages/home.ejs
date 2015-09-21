@@ -4,7 +4,55 @@
 <html lang="en">
     <% include ../partials/head %>
     <body>
-      <pre><%= JSON.stringify(mData) %></pre>
-      <pre><%= JSON.stringify(pData) %></pre>
+
+        <pre style="display: none;"><%= JSON.stringify(mData) %></pre>
+        <pre style="display: none;"><%= JSON.stringify(pData) %></pre>
+
+        <div style="list-style-type: none; padding-left: 0;">
+
+            <% for (var i = 0; i < mData.length; i++) { %>
+
+                <% score = mData[i].scores.toString().split(",") %>
+                <% rawMatchDate = new Date(mData[i].time.millis) %>
+
+                <div style="margin-bottom: 50px; padding-bottom: 50px; text-align: center; border-bottom: 1px dotted #000;">
+
+                    <div>
+
+                        <div style="display: inline-block; vertical-align: middle; width:40%;" data-team-id="<%= mData[i].teams[0].id %>">
+
+                            <p><%= pData[mData[i].teams[0].id].name %></p>
+
+                            <p><%= mData[i].teams[0].name %></p>
+
+                            <p><%= score[0] %></p>
+
+                        </div>
+
+                        <div style="display: inline-block; vertical-align: middle; width:10%;">
+                            <span>vs</span>
+                        </div>
+
+                        <div style="display: inline-block; vertical-align: middle; width:40%;" data-team-id="<%= mData[i].teams[1].id %>">
+
+                            <p><%= pData[34].name %></p>
+
+                            <p><%= mData[i].teams[1].name %></p>
+
+                            <p><%= score[1] %></p>
+
+                        </div>
+
+                    </div>
+
+                    <p><%= dateFormat(rawMatchDate, "dddd dS mmmm") %>, <%= dateFormat(rawMatchDate, "h:MM TT") %></p>
+                    <p><%= mData[i].venue.name %>, <%= mData[i].venue.city %>, <%= mData[i].venue.country %></p>
+
+                </div>
+
+            <% } %>
+
+        </div>
+
     </body>
 </html>
