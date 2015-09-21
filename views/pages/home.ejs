@@ -21,7 +21,7 @@
 
                         <div style="display: inline-block; vertical-align: middle; width:40%;" data-team-id="<%= mData[i].teams[0].id %>">
 
-                            <p><%= pData[mData[i].teams[0].id].name %></p>
+                            <%= pData[mData[i].teams[0].id].name ? pData[mData[i].teams[0].id].name : '' %>
 
                             <p><%= mData[i].teams[0].name %></p>
 
@@ -34,8 +34,6 @@
                         </div>
 
                         <div style="display: inline-block; vertical-align: middle; width:40%;" data-team-id="<%= mData[i].teams[1].id %>">
-
-                            <p><%= pData[34].name %></p>
 
                             <p><%= mData[i].teams[1].name %></p>
 
