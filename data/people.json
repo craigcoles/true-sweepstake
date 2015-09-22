@@ -1,62 +1,82 @@
 {
     "46":{
         "person":"Jon Boon",
+        "image":"/images/people/jon.jpg"
     },
     "34":{
         "person":"Jack Thompson",
+        "image":"/images/people/jack.jpg"
     },
     "47":{
         "person":"Danny Donovan",
+        "image":"/images/people/danny.jpg"
     },
     "720":{
         "person":"Kev Rowe",
+        "image":"/images/people/kev.jpg"
     },
     "36":{
         "person":"Ryan Anthoney",
+        "image":"/images/people/ryan.jpg"
     },
     "50":{
         "person":"Tom King",
+        "image":"/images/people/tomk.jpg"
     },
     "39":{
         "person":"Rich McCloskey",
+        "image":"/images/people/richm.jpg"
     },
     "49":{
         "person":"Nick Ballie",
+        "image":"/images/people/nick.jpg"
     },
     "42":{
         "person":"Tom Johnson",
+        "image":"/images/people/tomj.jpg"
     },
     "41":{
         "person":"Denise Russell",
+        "image":"/images/people/denise.jpg"
     },
     "45":{
         "person":"Matt Sutherland",
+        "image":"/images/people/matt.jpg"
     },
     "51":{
         "person":"Dave Jones",
+        "image":"/images/people/davej.jpg"
     },
     "33":{
         "person":"Becky Elms",
+        "image":"/images/people/becky.jpg"
     },
     "68":{
         "person":"Hugh Evans",
+        "image":"/images/people/hugh.jpg"
     },
     "37":{
         "person":"Craig Coles",
+        "image":"/images/people/craig.jpg"
     },
     "40":{
         "person":"Rich Foggin",
+        "image":"/images/people/richf.jpg"
     },
     "35":{
         "person":"Dave Ayres",
+        "image":"/images/people/davea.jpg"
     },
     "38":{
         "person":"Danny Donovan",
+        "image":"/images/people/danny.jpg"
     },
     "52":{
         "person":"Becky Elms",
+        "image":"/images/people/becky.jpg"
     },
     "58":{
         "person":"Ash Woodman",
+        "image":"/images/people/ash.jpg"
     }
 }
