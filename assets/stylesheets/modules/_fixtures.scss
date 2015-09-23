@@ -1,0 +1,128 @@
+.fixture-list {
+
+}
+
+.fixture {
+
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  &:nth-child(4n+1) {
+    background-color: #543d95;
+  }
+
+  &:nth-child(4n+2) {
+    background-color: #4155b4;
+  }
+
+  &:nth-child(4n+3) {
+    background-color: #49bcab;
+  }
+
+  &:nth-child(4n+4) {
+    background-color: #86499f;
+  }
+
+}
+
+.fixture__wrap {
+  width: 100%;
+}
+
+.fixture__meta {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.fixture__match-day {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.fixture__versus span,
+.fixture__score span {
+  @include font-size(120);
+  font-family: Adelle;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+}
+
+.fixture__score--home,
+.fixture__score--away {
+    padding: 0 10px;
+}
+
+.fixture__date,
+.fixture__venue {
+  @include font-size(14);
+  float: left;
+  width: 50%;
+  margin: 0;
+  font-family: OpenSans;
+  color: #ffd255;
+}
+
+.fixture__date {
+  text-align: left;
+}
+
+.fixture__venue {
+  color: #fff;
+  text-align: right;
+}
+
+.fixture__type {
+
+  @include font-size(12);
+  display: block;
+
+  & span {
+    display: inline-block;
+    padding: 5px 10px;
+    font-family: OpenSans;
+    background-color: #E31C79;
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &--pool-a span {
+    background-color: #62B5E5;
+  }
+
+  &--pool-b span {
+    background-color: #C4D600;
+  }
+
+  &--pool-c span {
+    background-color: #E31C79;
+  }
+
+  &--pool-d span {
+    background-color: #F6BE00;
+  }
+
+  &--quarter-finals span,
+  &--semi-finals span {
+    background-color: #8d9092;
+  }
+
+  &--bronze-final span {
+    background-color: #95694c;
+  }
+
+  &--final span {
+    background-color: #84764d;
+  }
+
+}

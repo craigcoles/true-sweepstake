@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-$environment: 'dev';
+$environment: 'live';
 
 // === HELPERS
 @import "base/functions";
@@ -32,10 +32,14 @@ $environment: 'dev';
 @import "elements/links";
 @import "elements/lists";
 @import "elements/paragraphs";
+@import "elements/screen-reader";
 @import "elements/tables";
 @import "elements/type";
 
-// === MODULES (most styles should go here)
+// === MODULES
+@import "modules/fixtures";
+@import "modules/person";
+@import "modules/team";
 
 // === DEV HELPERS
 @if $environment == 'dev' {

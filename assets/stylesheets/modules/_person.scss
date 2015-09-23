@@ -1,0 +1,22 @@
+.person {
+
+  display: inline-flex;
+
+  &__image {
+    display: block;
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+
+  &__name {
+    @include font-size(18, 60);
+    font-family: Adelle;
+    font-weight: normal;
+    margin: 0;
+    color: #fff;
+  }
+
+}

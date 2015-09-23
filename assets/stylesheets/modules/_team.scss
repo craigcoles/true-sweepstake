@@ -1,0 +1,126 @@
+.team {
+
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.04);
+  padding: 50px 0 20px;
+  margin-bottom: 50px;
+
+  &--winner {
+    border: 5px solid #fff;
+  }
+
+  &--home,
+  &--away {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20%;
+  }
+
+  &--winner & {
+    border: 3px solid #fff;
+  }
+
+  &__logo {
+
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 65px;
+    background-image: url("/images/flags.png");
+
+    &--ENG {
+      background-position: 0 -2100px;
+    }
+
+    &--FJI {
+      background-position: 0 -2310px;
+    }
+
+    &--TGA {
+      background-position: 0 -7140px;
+    }
+
+    &--GEO {
+      background-position: 0 -2450px;
+    }
+
+    &--IRE {
+      background-position: 0 -3150px;
+    }
+
+    &--CAN {
+      background-position: 0 -1330px;
+    }
+
+    &--RSA {
+      background-position: 0 -6090px;
+    }
+
+    &--JPN {
+      background-position: 0 -3570px;
+    }
+
+    &--FRA {
+      background-position: 0 -2380px;
+    }
+
+    &--ITA {
+      background-position: 0 -3360px;
+    }
+
+    &--SAM {
+      background-position: 0 -6300px;
+    }
+
+    &--USA {
+      background-position: 0 -7910px;
+    }
+
+    &--WAL {
+      background-position: 0 -8260px;
+    }
+
+    &--URU {
+      background-position: 0 -7840px;
+    }
+
+    &--NZL {
+      background-position: 0 -5390px;
+    }
+
+    &--ARG {
+      background-position: 0 -140px;
+    }
+
+    &--SCO {
+      background-position: 0 -6370px;
+    }
+
+    &--AUS {
+      background-position: 0 -350px;
+    }
+
+    &--ROM {
+      background-position: 0 -6020px;
+    }
+
+    &--NAM {
+      background-position: 0 -5040px;
+    }
+
+    &--null {
+      background-position: 0 0;
+    }
+
+  }
+
+  &__abbr,
+  &__place {
+    @include font-size(22);
+    font-family: Adelle;
+    font-weight: bold;
+    color: #fff;
+  }
+
+}
+

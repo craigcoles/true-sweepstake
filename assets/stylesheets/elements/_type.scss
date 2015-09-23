@@ -2,6 +2,17 @@
 $base-font-size: 16px; // used for rem @font-size mixin
 $em-base: 16px !default;
 
+// OPEN SANS
+@include font-face(OpenSans, "../fonts/opensans/opensans-regular-webfont", normal, normal); // font-weight: normal;
+@include font-face(OpenSans, "../fonts/opensans/opensans-bold-webfont", bold, normal); // font-weight: bold;
+@include font-face(OpenSans, "../fonts/opensans/opensans-italic-webfont", normal, italic); // font-style: italic;
+
+// ADELLE
+@include font-face(Adelle, "../fonts/adelle/adelle-light-webfont", 300, normal); // font-weight: lighter;
+@include font-face(Adelle, "../fonts/adelle/adelle-reg-webfont", 400, normal); // font-weight: normal;
+@include font-face(Adelle, "../fonts/adelle/adelle-bold-webfont", 700, normal); // font-weight: bold;
+@include font-face(Adelle, "../fonts/adelle/adelle-extrabold-webfont", 800, normal); // font-weight: 800;
+
 body {
     font-family: $base-font;
     font-size: $base-font-size;

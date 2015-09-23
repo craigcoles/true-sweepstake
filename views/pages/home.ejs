@@ -8,7 +8,7 @@
         <pre style="display: none;"><%= JSON.stringify(mData) %></pre>
         <pre style="display: none;"><%= JSON.stringify(pData) %></pre>
 
-        <div style="list-style-type: none; padding-left: 0;">
+        <div class="fixture-list">
 
             <% for (var i = 0; i < mData.length; i++) { %>
 
@@ -16,48 +16,106 @@
                 <% today = Date.now(); %>
                 <% rawMatchDate = new Date(mData[i].time.millis) %>
 
-                <div style="margin-bottom: 50px; padding-bottom: 50px; text-align: center; border-bottom: 1px dotted #000;">
+                <div class="fixture" data-fixture-id="<%= mData[i].matchId %>">
 
-                    <div>
+                  <div class="fixture__wrap">
 
-                        <div style="display: inline-block; vertical-align: middle; width:40%;" data-team-id="<%= mData[i].teams[0].id %>">
+                    <div class="team--home">
 
-                            <% if (!mData[i].teams[0].id == 0) { %>
-                                <img style="display: block; width:100%; height: auto; max-width: 300px; margin: 0 auto; border-radius: 50%;" src="<%= pData[(mData[i].teams[0].id)].image %>" alt="<%= pData[(mData[i].teams[0].id)].person %>">
-                                <p><%= pData[(mData[i].teams[0].id)].person %></p>
-                            <% } %>
+                      <% if (today > mData[i].time.millis) { %>
+                        <% if (Math.max.apply(null, score) == score[0] ) { %>
+                          <div class="team team--winner" data-team-id="<%= mData[i].teams[0].id %>">
+                        <% } else { %>
+                          <div class="team" data-team-id="<%= mData[i].teams[0].id %>">
+                        <% } %>
+                      <% } else { %>
+                        <div class="team" data-team-id="<%= mData[i].teams[0].id %>">
+                      <% } %>
 
-                            <p><%= mData[i].teams[0].name %></p>
+                          <div class="team__logo team__logo--<%= mData[i].teams[0].abbreviation %>">
+                            <p class="sr-only"><%= mData[i].teams[0].name %></p>
+                          </div>
 
-                            <% if (today > mData[i].time.millis) { %>
-                                <p><%= score[0] %></p>
-                            <% } %>
+                          <% if (mData[i].teams[0].abbreviation) { %>
+                            <p class="team__abbr"><%= mData[i].teams[0].abbreviation %></p>
+                          <% } else { %>
+                            <p class="team__place"><%= mData[i].teams[0].name %></p>
+                          <% } %>
 
+                      </div>
+
+                      <% if (!mData[i].teams[0].id == 0) { %>
+                        <div class="person">
+                          <img class="person__image" src="<%= pData[(mData[i].teams[0].id)].image %>" alt="<%= pData[(mData[i].teams[0].id)].person %>">
+                          <h4 class="person__name"><%= pData[(mData[i].teams[0].id)].person %></h4>
                         </div>
-
-                        <div style="display: inline-block; vertical-align: middle; width:10%;">
-                            <span>vs</span>
-                        </div>
-
-                        <div style="display: inline-block; vertical-align: middle; width:40%;" data-team-id="<%= mData[i].teams[1].id %>">
-
-                            <% if (!mData[i].teams[1].id == 0) { %>
-                                <img style="display: block; width:100%; height: auto; max-width: 300px; margin: 0 auto; border-radius: 50%;" src="<%= pData[(mData[i].teams[1].id)].image %>" alt="<%= pData[(mData[i].teams[1].id)].person %>">
-                                <p><%= pData[(mData[i].teams[1].id)].person %></p>
-                            <% } %>
-
-                            <p><%= mData[i].teams[1].name %></p>
-
-                            <% if (today > mData[i].time.millis) { %>
-                                <p><%= score[1] %></p>
-                            <% } %>
-
-                        </div>
+                      <% } %>
 
                     </div>
 
-                    <p><%= dateFormat(rawMatchDate, "dddd dS mmmm") %>, <%= dateFormat(rawMatchDate, "h:MM TT") %></p>
-                    <p><%= mData[i].venue.name %>, <%= mData[i].venue.city %>, <%= mData[i].venue.country %></p>
+                    <div class="fixture__meta">
+
+                      <div class="fixture__type fixture__type--<%= mData[i].eventPhase.replace(' ', '-').toLowerCase() %>">
+                        <span><%= mData[i].eventPhase %></span>
+                      </div>
+
+                      <% if (today > mData[i].time.millis) { %>
+
+                        <div class="fixture__score">
+                          <span class="fixture__score--home"><%= score[0] %></span>
+                          <span>&ndash;</span>
+                          <span class="fixture__score--home"><%= score[1] %></span>
+                        </div>
+
+                      <% } else { %>
+
+                        <div class="fixture__versus">
+                            <span>v</span>
+                        </div>
+
+                      <% } %>
+
+                      <div class="fixture__match-day">
+                        <p class="fixture__date"><%= dateFormat(rawMatchDate, "dddd dS mmmm") %>, <%= dateFormat(rawMatchDate, "h:MM TT") %></p>
+                        <p class="fixture__venue"><%= mData[i].venue.name %>, <%= mData[i].venue.city %>, <%= mData[i].venue.country %></p>
+                      </div>
+
+                    </div>
+
+                    <div class="team--away">
+
+                      <% if (today > mData[i].time.millis) { %>
+                        <% if (Math.max.apply(null, score) == score[1] ) { %>
+                          <div class="team team--winner" data-team-id="<%= mData[i].teams[1].id %>">
+                        <% } else { %>
+                          <div class="team" data-team-id="<%= mData[i].teams[1].id %>">
+                        <% } %>
+                      <% } else { %>
+                        <div class="team" data-team-id="<%= mData[i].teams[1].id %>">
+                      <% } %>
+
+                          <div class="team__logo team__logo--<%= mData[i].teams[1].abbreviation %>">
+                            <p class="sr-only"><%= mData[i].teams[1].name %></p>
+                          </div>
+
+                          <% if (mData[i].teams[1].abbreviation) { %>
+                            <p class="team__abbr"><%= mData[i].teams[1].abbreviation %></p>
+                          <% } else { %>
+                            <p class="team__place"><%= mData[i].teams[1].name %></p>
+                          <% } %>
+
+                      </div>
+
+                      <% if (!mData[i].teams[1].id == 0) { %>
+                        <div class="person">
+                          <img class="person__image" src="<%= pData[(mData[i].teams[1].id)].image %>" alt="<%= pData[(mData[i].teams[1].id)].person %>">
+                          <h4 class="person__name"><%= pData[(mData[i].teams[1].id)].person %></h4>
+                        </div>
+                      <% } %>
+
+                    </div>
+
+                  </div>
 
                 </div>
 
