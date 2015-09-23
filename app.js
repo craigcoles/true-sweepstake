@@ -23,6 +23,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.configure(function(){
+    app.use(express.static(__dirname + '/fonts'));
+});
+
 // Sass Middleware Setup
 app.use(sassMiddleware({
     src: srcPath,
