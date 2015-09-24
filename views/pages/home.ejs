@@ -4,7 +4,6 @@
 <html lang="en">
     <% include ../partials/head %>
     <body>
-
         <pre style="display: none;"><%= JSON.stringify(mData) %></pre>
         <pre style="display: none;"><%= JSON.stringify(pData) %></pre>
 
@@ -16,8 +15,11 @@
                 <% today = Date.now(); %>
                 <% rawMatchDate = new Date(mData[i].time.millis) %>
 
-                <div class="fixture" data-fixture-id="<%= mData[i].matchId %>">
-
+                <% if (mData[i].matchId === nextMatchId) { %>
+                    <div class="fixture" data-fixture-id="<%= mData[i].matchId %>" id="nextMatch">
+                <% } else { %>
+                    <div class="fixture" data-fixture-id="<%= mData[i].matchId %>">
+                <% } %>
                   <div class="fixture__wrap">
 
                     <div class="team--home">
@@ -122,6 +124,6 @@
             <% } %>
 
         </div>
-
+        <script src="/scripts/client.js"></script>
     </body>
 </html>

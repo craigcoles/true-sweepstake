@@ -81,7 +81,7 @@ var express     = require('express'),
                 mData: mData.matches,
                 pData: pData,
                 dateFormat: dateFormat,
-                currentMatchId: currentMatch.matchId
+                nextMatchId: currentMatch.matchId
             });
         });
     });
