@@ -9,6 +9,7 @@ var express         = require('express'),
     srcPath         = __dirname + '/assets/',
     destPath        = __dirname + '/public/',
     app             = express();
+    balls = "test";
 
 app.listen(8080);
 
