@@ -1,29 +1,43 @@
-modules.export = function() {
+(function() {
 	var helper = {};
 
-	helper.MATCH_LENGTH = getMinutes(80);	
+    // ===========================
+	// Private methods
+    // ===========================
+	function getMinutes (minutes) {
+		return minutes * 1000 * 60;
+	};
 
-	helper.matchIsUnderway = function (startDate) {
-		return (startDate.getTime() > (Date.now() - helper.MATCH_LENGTH)) 
-			&& ((startDate.getTime() + helper.MATCH_LENGTH) > Date.now());
+	function matchByDateAsc(a, b) {
+		return a.time.millis - b.time.millis;
 	}
 
-	helper.matchIsInFuture = function (startDate) {
-		return startDate.getTime() > Date.now();
-	}
+    // ===========================
+	// Public variables
+    // ===========================
+	helper.MATCH_LENGTH = getMinutes(80);
+
+    // ===========================
+	// Public methods
+    // ===========================
+	helper.matchIsUnderway = function (match) {
+		var startTime = match.time.millis,
+			endTime = startTime + helper.MATCH_LENGTH;
+
+		return endTime > Date.now() && startTime < Date.now();
+	};
+
+	helper.matchIsInFuture = function (match) {
+		return match.time.millis > Date.now();
+	};
 
 	helper.getCurrentOrNextMatch = function (matches) {
-		var currentOrFutureMatches = matches.filter(function(e) {    
+		var currentOrFutureMatches = matches.filter(function(e) {
 			return helper.matchIsUnderway(e) || helper.matchIsInFuture(e);
-		});  
+		});
 
-		return currentOrFutureMatches.sort()[0];
-	}
+		return currentOrFutureMatches.sort(matchByDateAsc)[0];
+	};
 
-	// Helpers
-	helper.getMinutes = function(minutes) {
-		return minutes * 1000 * 60;
-	}
-
-return helper;
-};
+	module.exports = helper;
+})();
