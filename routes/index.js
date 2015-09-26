@@ -3,6 +3,7 @@ var express     = require('express'),
     dateFormat  = require('dateformat'),
     request     = require('request'),
     matchHelper = require('../helpers/matches'),
+    logger      = require('../helpers/logger'),
     router      = express.Router(),
     matchData   = './data/matches.json',
     personData  = './data/people.json',
@@ -13,10 +14,13 @@ var express     = require('express'),
     // Functions
     // ===========================
     function readMatchesFromFile() {
+        logger.log('read cached file');
+
         var data = fs.readFileSync(matchData, 'utf8');
         mData = JSON.parse(data);
 
-        if (!mData.length) {
+        if (!mData) {
+            logger.log('file empty');
             fetchMatches();
         }
     }
@@ -24,7 +28,7 @@ var express     = require('express'),
     function writeMatchesToFile(data) {
         fs.writeFile(matchData, JSON.stringify(data), 'utf8', function(err) {
             if (err !== null) {
-                console.log(err);
+                logger.log(err);
             }
         });
     }
@@ -32,9 +36,9 @@ var express     = require('express'),
     function fetchMatches() {
         request('http://cmsapi.pulselive.com/rugby/event/1238/schedule?language=en&client=pulse', function(error, response, body) {
             if (error !== null) {
-                console.log('use file, api fail');
+                logger.log('use file, api fail');
             } else {
-                console.log('fetch from api');
+                logger.log('fetch from api');
                 mData = JSON.parse(body);
                 writeMatchesToFile(mData);
             }
@@ -54,8 +58,6 @@ var express     = require('express'),
 
         if (requestFromApi) {
             fetchMatches();
-        } else {
-            console.log('use file, cached');
         }
 
         callback(currentMatch);
@@ -66,7 +68,7 @@ var express     = require('express'),
     // ===========================
     fs.readFile(personData, 'utf8', function (err, data) {
         if (err) {
-            console.log('Error: ' + err);
+            logger.log('Error: ' + err);
             return;
         }
         pData = JSON.parse(data);
