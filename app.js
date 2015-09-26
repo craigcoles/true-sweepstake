@@ -35,7 +35,7 @@ app.use(sassMiddleware({
     dest: destPath,
     debug: false,
     force: true,
-    outputStyle: 'expanded'
+    outputStyle: 'compressed'
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));

@@ -64,9 +64,9 @@
                       <% if (today > mData[i].time.millis) { %>
 
                         <div class="fixture__score">
-                          <span class="fixture__score--home"><%= score[0] %></span>
+                          <span class="fixture__score--home" data-component="fixture__score"><%= score[0] %></span>
                           <span>&ndash;</span>
-                          <span class="fixture__score--home"><%= score[1] %></span>
+                          <span class="fixture__score--home" data-component="fixture__score"><%= score[1] %></span>
                         </div>
 
                       <% } else { %>
@@ -78,7 +78,7 @@
                       <% } %>
 
                       <div class="fixture__match-day">
-                        <p class="fixture__date"><%= dateFormat(rawMatchDate, "dddd dS mmmm") %>, <%= dateFormat(rawMatchDate, "h:MM TT") %></p>
+                        <p class="fixture__date" data-date="<%= rawMatchDate.getTime() %>"><%= dateFormat(rawMatchDate, "dddd dS mmmm") %>, <%= dateFormat(rawMatchDate, "h:MM TT") %></p>
                         <p class="fixture__venue"><%= mData[i].venue.name %>, <%= mData[i].venue.city %>, <%= mData[i].venue.country %></p>
                       </div>
 

@@ -83,8 +83,15 @@ var express     = require('express'),
                 mData: mData.matches,
                 pData: pData,
                 dateFormat: dateFormat,
-                nextMatchId: currentMatch.matchId
+                nextMatchId: currentMatch.matchId,
+                matchIsLive: matchHelper.matchIsUnderway(currentMatch)
             });
+        });
+    });
+
+    router.get('/livedata.json', function(req, res) {
+        getLiveResults(function(currentMatch) {
+            res.send(currentMatch);
         });
     });
 
