@@ -30,7 +30,6 @@
 	}
 
 	function updateData() {
-		console.log('interval');
 		if (!matchIsUnderway(nextMatch)) {
 			return;
 		}
@@ -38,7 +37,6 @@
 		atomic.get(LIVE_DATA_URL)
 			.success(function(data) {
 				updateInterface(data);
-				console.log('update');
 			})
 			.error(function(data) {
 				console.log('Failed to live update score', data);
