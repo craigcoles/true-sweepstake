@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(sassMiddleware({
     src: srcPath,
     dest: destPath,
-    debug: true,
+    debug: false,
     force: true,
     outputStyle: 'expanded'
 }));
