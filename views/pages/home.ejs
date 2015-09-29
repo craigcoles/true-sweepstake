@@ -57,6 +57,11 @@
 
                     <div class="fixture__meta">
 
+                      <div class="fixture__match-day">
+                        <p class="fixture__date" data-date="<%= rawMatchDate.getTime() %>"><%= dateFormat(rawMatchDate, "dddd dS mmmm") %>, <%= dateFormat(rawMatchDate, "h:MM TT") %></p>
+                        <p class="fixture__venue"><%= mData[i].venue.name %>, <%= mData[i].venue.city %>, <%= mData[i].venue.country %></p>
+                      </div>
+
                       <div class="fixture__type fixture__type--<%= mData[i].eventPhase.replace(' ', '-').toLowerCase() %>">
                         <span><%= mData[i].eventPhase %></span>
                       </div>
@@ -76,11 +81,6 @@
                         </div>
 
                       <% } %>
-
-                      <div class="fixture__match-day">
-                        <p class="fixture__date" data-date="<%= rawMatchDate.getTime() %>"><%= dateFormat(rawMatchDate, "dddd dS mmmm") %>, <%= dateFormat(rawMatchDate, "h:MM TT") %></p>
-                        <p class="fixture__venue"><%= mData[i].venue.name %>, <%= mData[i].venue.city %>, <%= mData[i].venue.country %></p>
-                      </div>
 
                     </div>
 

@@ -39,12 +39,7 @@
 }
 
 .fixture__match-day {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 15px 20px;
-  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
 }
 
 .fixture__versus span,
@@ -65,20 +60,13 @@
 .fixture__date,
 .fixture__venue {
   @include font-size(14);
-  float: left;
-  width: 50%;
   margin: 0;
   font-family: OpenSans;
   color: #ffd255;
 }
 
-.fixture__date {
-  text-align: left;
-}
-
 .fixture__venue {
   color: #fff;
-  text-align: right;
 }
 
 .fixture__type {
