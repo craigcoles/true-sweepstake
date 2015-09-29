@@ -34,22 +34,63 @@
                         <div class="team" data-team-id="<%= mData[i].teams[0].id %>">
                       <% } %>
 
-                          <div class="team__logo team__logo--<%= mData[i].teams[0].abbreviation %>">
-                            <p class="sr-only"><%= mData[i].teams[0].name %></p>
-                          </div>
+                          <div class="team__wrap">
 
-                          <% if (mData[i].teams[0].abbreviation) { %>
-                            <p class="team__abbr"><%= mData[i].teams[0].abbreviation %></p>
-                          <% } else { %>
-                            <p class="team__place"><%= mData[i].teams[0].name %></p>
-                          <% } %>
+                            <div class="team__logo team__logo--<%= mData[i].teams[0].abbreviation %>">
+                              <p class="sr-only"><%= mData[i].teams[0].name %></p>
+                            </div>
+
+                            <% if (mData[i].teams[0].abbreviation) { %>
+                              <p class="team__abbr"><%= mData[i].teams[0].abbreviation %></p>
+                            <% } else { %>
+                              <p class="team__place"><%= mData[i].teams[0].name %></p>
+                            <% } %>
+
+                          </div>
 
                       </div>
 
                       <% if (!mData[i].teams[0].id == 0) { %>
                         <div class="person">
-                          <img class="person__image" src="<%= pData[(mData[i].teams[0].id)].image %>" alt="<%= pData[(mData[i].teams[0].id)].person %>">
-                          <h4 class="person__name"><%= pData[(mData[i].teams[0].id)].person %></h4>
+                          <img class="person__image" src="<%= pData[(mData[i].teams[0].id)].image %>" title="<%= pData[(mData[i].teams[0].id)].person %>" alt="<%= pData[(mData[i].teams[0].id)].person %>">
+                          <span class="person__tooltip"><%= pData[(mData[i].teams[0].id)].person %></span>
+                        </div>
+                      <% } %>
+
+                    </div>
+
+                    <div class="team--away">
+
+                      <% if (today > mData[i].time.millis) { %>
+                        <% if (Math.max.apply(null, score) == score[1] ) { %>
+                          <div class="team team--winner" data-team-id="<%= mData[i].teams[1].id %>">
+                        <% } else { %>
+                          <div class="team" data-team-id="<%= mData[i].teams[1].id %>">
+                        <% } %>
+                      <% } else { %>
+                        <div class="team" data-team-id="<%= mData[i].teams[1].id %>">
+                      <% } %>
+
+                          <div class="team__wrap">
+
+                            <div class="team__logo team__logo--<%= mData[i].teams[1].abbreviation %>">
+                              <p class="sr-only"><%= mData[i].teams[1].name %></p>
+                            </div>
+
+                            <% if (mData[i].teams[1].abbreviation) { %>
+                              <p class="team__abbr"><%= mData[i].teams[1].abbreviation %></p>
+                            <% } else { %>
+                              <p class="team__place"><%= mData[i].teams[1].name %></p>
+                            <% } %>
+
+                          </div>
+
+                      </div>
+
+                      <% if (!mData[i].teams[1].id == 0) { %>
+                        <div class="person">
+                          <img class="person__image" src="<%= pData[(mData[i].teams[1].id)].image %>" title="<%= pData[(mData[i].teams[1].id)].person %>" alt="<%= pData[(mData[i].teams[1].id)].person %>">
+                          <span class="person__tooltip"><%= pData[(mData[i].teams[1].id)].person %></span>
                         </div>
                       <% } %>
 
@@ -80,39 +121,6 @@
                             <span>v</span>
                         </div>
 
-                      <% } %>
-
-                    </div>
-
-                    <div class="team--away">
-
-                      <% if (today > mData[i].time.millis) { %>
-                        <% if (Math.max.apply(null, score) == score[1] ) { %>
-                          <div class="team team--winner" data-team-id="<%= mData[i].teams[1].id %>">
-                        <% } else { %>
-                          <div class="team" data-team-id="<%= mData[i].teams[1].id %>">
-                        <% } %>
-                      <% } else { %>
-                        <div class="team" data-team-id="<%= mData[i].teams[1].id %>">
-                      <% } %>
-
-                          <div class="team__logo team__logo--<%= mData[i].teams[1].abbreviation %>">
-                            <p class="sr-only"><%= mData[i].teams[1].name %></p>
-                          </div>
-
-                          <% if (mData[i].teams[1].abbreviation) { %>
-                            <p class="team__abbr"><%= mData[i].teams[1].abbreviation %></p>
-                          <% } else { %>
-                            <p class="team__place"><%= mData[i].teams[1].name %></p>
-                          <% } %>
-
-                      </div>
-
-                      <% if (!mData[i].teams[1].id == 0) { %>
-                        <div class="person">
-                          <img class="person__image" src="<%= pData[(mData[i].teams[1].id)].image %>" alt="<%= pData[(mData[i].teams[1].id)].person %>">
-                          <h4 class="person__name"><%= pData[(mData[i].teams[1].id)].person %></h4>
-                        </div>
                       <% } %>
 
                     </div>

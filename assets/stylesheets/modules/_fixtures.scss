@@ -5,7 +5,7 @@
 .fixture {
 
   position: relative;
-  height: 100vh;
+  // height: 100vh;
   text-align: center;
   display: flex;
   align-items: center;
@@ -30,12 +30,23 @@
 
 .fixture__wrap {
   width: 100%;
+  padding: 10% 5%;
+  @include mq(tablet) {
+    display: flex;
+  }
 }
 
 .fixture__meta {
-  display: inline-block;
-  vertical-align: middle;
-  width: 50%;
+
+  clear: left;
+  padding-top: 30px;
+
+  @include mq(tablet) {
+    order: 2;
+    width: 60%;
+    padding-top: 0;
+  }
+
 }
 
 .fixture__match-day {
@@ -44,12 +55,24 @@
 
 .fixture__versus span,
 .fixture__score span {
+
   @include font-size(120);
   font-family: Adelle;
   font-weight: bold;
   display: inline-block;
   vertical-align: middle;
   color: #fff;
+
+  @include mq($until: tablet) {
+    @include font-size(80);
+  }
+
+}
+
+.fixture__versus {
+  @include mq($until: tablet) {
+    display: none;
+  }
 }
 
 .fixture__score--home,

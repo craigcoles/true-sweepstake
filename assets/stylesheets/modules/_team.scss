@@ -1,9 +1,17 @@
 .team {
 
+  @include ratio-box;
   border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.04);
-  padding: 50px 0 20px;
   margin-bottom: 50px;
+
+  &__wrap {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+  }
 
   &--winner {
     border: 5px solid #ffd255;
@@ -11,9 +19,29 @@
 
   &--home,
   &--away {
-    display: inline-block;
-    vertical-align: middle;
-    width: 20%;
+
+    @include mq($until: tablet) {
+      @include span(6);
+    }
+
+    @include mq(tablet) {
+      order: 1;
+      width: 20%;
+    }
+
+  }
+
+  &--away {
+
+    @include mq($until: tablet) {
+      // @include pre(1);
+      @include last;
+    }
+
+    @include mq(tablet) {
+      order: 3;
+    }
+
   }
 
   &--winner & {
@@ -120,6 +148,17 @@
     font-family: Adelle;
     font-weight: bold;
     color: #fff;
+    white-space: nowrap;
+  }
+
+  &__place {
+    @include mq($until: mobile-large) {
+      @include font-size(12);
+    }
+  }
+
+  &__abbr {
+    margin-bottom: 0;
   }
 
 }
