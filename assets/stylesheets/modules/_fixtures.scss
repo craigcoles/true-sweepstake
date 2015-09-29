@@ -5,7 +5,7 @@
 .fixture {
 
   position: relative;
-  // height: 100vh;
+  overflow: hidden;
   text-align: center;
   display: flex;
   align-items: center;
@@ -29,11 +29,22 @@
 }
 
 .fixture__wrap {
+  position: relative;
   width: 100%;
   padding: 10% 5%;
   @include mq(tablet) {
     display: flex;
   }
+}
+
+.fixture__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  height: 100%;
+  transform: translateX(-50%);
+  opacity: 0.025;
 }
 
 .fixture__meta {
