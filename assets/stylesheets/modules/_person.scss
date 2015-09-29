@@ -11,7 +11,7 @@
   }
 
   &__tooltip {
-    @include font-size(16);
+    @include font-size(14);
     position: absolute;
     top: 110%;
     left: 50%;
