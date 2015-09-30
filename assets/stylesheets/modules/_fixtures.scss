@@ -7,8 +7,14 @@
   position: relative;
   overflow: hidden;
   text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   &:nth-child(4n+1) {
     background-color: #543d95;
@@ -33,6 +39,9 @@
   width: 100%;
   padding: 10% 5%;
   @include mq(tablet) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
   }
 }
@@ -43,8 +52,11 @@
   left: 0;
   max-width: none;
   height: 100%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   opacity: 0.025;
+  filter: alpha(opacity=2);
 }
 
 .fixture__meta {
@@ -53,7 +65,10 @@
   padding-top: 30px;
 
   @include mq(tablet) {
-    order: 2;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
     width: 60%;
     padding-top: 0;
   }
