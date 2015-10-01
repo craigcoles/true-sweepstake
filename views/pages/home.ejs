@@ -4,7 +4,9 @@
 <html lang="en">
     <% include ../partials/head %>
     <body>
-
+        <script>
+          var fixtureTeams = <%- JSON.stringify(fixtureTeams) %>;
+        </script>
         <div class="fixture-list">
 
             <% for (var i = 0; i < mData.length; i++) { %>

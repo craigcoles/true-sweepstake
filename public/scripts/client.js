@@ -48,3 +48,53 @@
 		matchElements.scores[1].innerText = matchData.scores[1];
 	}
 })();
+
+// ===========================
+// Filtering
+// ===========================
+var Filter = (function(){
+	var filter = {};
+
+	filter.filterByTeam = function (teamId) {
+		var matchIds = getMatchIdsByTeamId(fixtureTeams, teamId);
+
+		showMatches(matchIds);
+	}
+
+	function showMatches(matchIds) {
+		var matchElementsToShow = getMatchElements(matchIds),
+			allMatchElements = document.querySelectorAll('[data-fixture-id]'),
+			matchesFound = matchElementsToShow.length > 0,
+			allMatchDisplay = matchesFound ? "none": "";
+
+		for (var i = 0; i < allMatchElements.length; i++) {
+			allMatchElements[i].style.display = allMatchDisplay;
+		}
+
+		for (var i = 0; i < matchElementsToShow.length; i++) {
+			matchElementsToShow[i].style.display = "";
+		}
+	}
+
+	function getMatchElements(matchIds) {
+		var matchElements = [];
+
+		for (var i in matchIds) {
+			matchElements.push(document.querySelector('[data-fixture-id="'+matchIds[i]+'"]'));
+		}
+
+		return matchElements;
+	}
+
+	function getMatchIdsByTeamId(fixtures, teamId) {
+		var matches = getMatchesByTeamId(fixtures, teamId);
+
+		return matches.map(function(e) { return e.matchId; });
+	}
+
+	function getMatchesByTeamId(fixtures, teamId) {
+		return fixtures.filter(function(e){ return e.teams.indexOf(teamId) > -1; });
+	}
+
+	return filter;
+})();

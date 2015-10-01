@@ -79,8 +79,13 @@ var express     = require('express'),
     // ===========================
     router.get('/', function(req, res) {
         getLiveResults(function(currentMatch) {
+            var fixtureTeams = mData.matches.map(function(e) {
+                return { matchId: e.matchId, teams: [ e.teams[0].id, e.teams[1].id ] };
+            });
+
             res.render('pages/home', {
                 mData: mData.matches,
+                fixtureTeams: fixtureTeams,
                 pData: pData,
                 dateFormat: dateFormat,
                 nextMatchId: currentMatch.matchId,
